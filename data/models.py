@@ -16,7 +16,7 @@ class Main(models.Model):
 class Jobs(models.Model):
     place = models.CharField(max_length=256, blank=True)
     start = models.DateField(blank=True)
-    end = models.DateField(blank=True)
+    end = models.DateField(blank=True, null=True)
     title = models.CharField(max_length=128, blank=True)
     company = models.CharField(max_length=128, blank=True)
     general_text = models.TextField(blank=True)

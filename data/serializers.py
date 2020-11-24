@@ -7,11 +7,10 @@ class MainSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Main
-        fields = ('__all__',)
+        fields = '__all__'
 
 
 class JobsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Jobs
-        fields = ('__all__',)
-
+        fields = '__all__'
