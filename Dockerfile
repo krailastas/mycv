@@ -23,4 +23,5 @@ RUN if [ -s requirements.txt ]; then pip install -r requirements.txt; fi
 EXPOSE 8092
 VOLUME /app/mycv/assets
 VOLUME /app/mycv/media
+VOLUME /app/mycv.db
 ENTRYPOINT ["/usr/local/bin/uwsgi", "--ini", "/app/uwsgi.ini"]
