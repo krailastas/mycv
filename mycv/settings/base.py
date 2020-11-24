@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'mycv.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(ROOT_DIR, os.environ.get('DB_NAME', 'mycv.db'))
+        'NAME': os.path.join(ROOT_DIR, os.environ.get('DB_NAME', 'db/mycv.db'))
     }
 }
 # Internationalization
