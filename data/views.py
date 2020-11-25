@@ -1,14 +1,9 @@
 from rest_framework import viewsets
 
-from .models import Main, Jobs
-from .serializers import MainSerializer, JobsSerializer
+from .models import Main
+from .serializers import MainSerializer
 
 
 class MainViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = MainSerializer
-    queryset = Main.objects.all()
-
-
-class JobsViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = JobsSerializer
-    queryset = Jobs.objects.all()
+    queryset = Main.objects.order_by('-order')

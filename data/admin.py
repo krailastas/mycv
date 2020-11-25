@@ -1,19 +1,25 @@
 from django.contrib import admin
 
-from .models import Main, Jobs
+from .models import Main, Jobs, Languages
 
 
 class MainAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'title', 'full_name'
+        'title', 'full_name'
     )
-    ordering = ('id',)
+    ordering = ('-order',)
 
 
 class JobsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'company', 'start', 'end', 'title')
-    ordering = ('id',)
+    list_display = ('company', 'start', 'end', 'title')
+    ordering = ('-order',)
+
+
+class LanguagesAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    ordering = ('-order',)
 
 
 admin.site.register(Main, MainAdmin)
 admin.site.register(Jobs, JobsAdmin)
+admin.site.register(Languages, LanguagesAdmin)
