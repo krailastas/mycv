@@ -41,7 +41,7 @@ class Jobs(models.Model):
 class Languages(models.Model):
     main = models.ForeignKey('data.Main', on_delete=models.CASCADE, null=True, blank=True, related_name='languages')
     title = models.CharField(max_length=258, blank=True)
-    lv = models.CharField(max_length=128, blank=True)
+    level = models.CharField(max_length=128, blank=True)
     order = models.IntegerField(null=True, blank=True, default=1)
 
     def __str__(self):
@@ -63,4 +63,15 @@ class Skils(models.Model):
         ordering = ['-order']
 
 
+class Educations(models.Model):
+    main = models.ForeignKey('data.Main', on_delete=models.CASCADE, null=True, blank=True, related_name='educations')
+    title = models.CharField(max_length=258, blank=True)
+    university = models.CharField(max_length=128, blank=True)
+    dt = models.CharField(max_length=128, blank=True)
+    order = models.IntegerField(null=True, blank=True, default=1)
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-order']

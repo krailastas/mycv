@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Main, Jobs, Languages, Skils
+from .models import Main, Jobs, Languages, Skils, Educations
 
 
 class MainAdmin(admin.ModelAdmin):
@@ -29,3 +29,4 @@ admin.site.register(Main, MainAdmin)
 admin.site.register(Jobs, JobsAdmin)
 admin.site.register(Languages, LanguagesAdmin)
 admin.site.register(Skils, SkilsAdmin)
+admin.site.register(Educations, SkilsAdmin)
