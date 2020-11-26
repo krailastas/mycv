@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Main, Jobs
+from .models import Main, Jobs, Skils
 
 
 class JobsSerializer(serializers.ModelSerializer):
@@ -15,9 +15,16 @@ class LanguagesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class SkilsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Skils
+        fields = '__all__'
+
+
 class MainSerializer(serializers.ModelSerializer):
     jobs = JobsSerializer(many=True, read_only=True)
     languages = LanguagesSerializer(many=True, read_only=True)
+    skils = SkilsSerializer(many=True, read_only=True)
 
     class Meta:
         model = Main

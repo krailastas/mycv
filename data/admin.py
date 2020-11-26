@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Main, Jobs, Languages
+from .models import Main, Jobs, Languages, Skils
 
 
 class MainAdmin(admin.ModelAdmin):
@@ -20,6 +20,12 @@ class LanguagesAdmin(admin.ModelAdmin):
     ordering = ('-order',)
 
 
+class SkilsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    ordering = ('-order',)
+
+
 admin.site.register(Main, MainAdmin)
 admin.site.register(Jobs, JobsAdmin)
 admin.site.register(Languages, LanguagesAdmin)
+admin.site.register(Skils, SkilsAdmin)
