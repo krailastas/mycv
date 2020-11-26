@@ -9,6 +9,7 @@ class Main(models.Model):
     title = models.CharField(max_length=128, blank=True)
     full_name = models.CharField(max_length=128, blank=True, unique=True)
     photo = models.ImageField(upload_to='data/photo', null=True, blank=True)
+    cv = models.FileField(upload_to='data/cv', null=True, blank=True)
     github = models.URLField(blank=True, null=True)
     own_site = models.URLField(blank=True, null=True)
     order = models.IntegerField(null=True, blank=True, default=1)
@@ -40,7 +41,7 @@ class Jobs(models.Model):
 class Languages(models.Model):
     main = models.ForeignKey('data.Main', on_delete=models.CASCADE, null=True, blank=True, related_name='languages')
     title = models.CharField(max_length=258, blank=True)
-    level = models.CharField(max_length=258, blank=True)
+    lv = models.CharField(max_length=128, blank=True)
     order = models.IntegerField(null=True, blank=True, default=1)
 
     def __str__(self):
@@ -53,7 +54,6 @@ class Languages(models.Model):
 class Skils(models.Model):
     main = models.ForeignKey('data.Main', on_delete=models.CASCADE, null=True, blank=True, related_name='skils')
     title = models.CharField(max_length=258, blank=True)
-    level = models.CharField(max_length=258, blank=True)
     order = models.IntegerField(null=True, blank=True, default=1)
 
     def __str__(self):
